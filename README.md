@@ -1,4 +1,4 @@
-<b>p5 Mobile Examples</b>
+<h1>p5 Mobile Examples</h1>
 
 This is a collection of p5 sketches designed specifically for mobile browsers.
 
