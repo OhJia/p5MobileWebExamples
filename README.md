@@ -11,3 +11,5 @@ Install [Node.js] (https://nodejs.org/) if you haven't already </br>
 3. Connect your phone to the same WiFi network as your desktop</br>
 4. Find your desktop's IP address, and go to <i>your IP address:8080</i> from your mobile browser</br>
 
+Alternatively, you can host the sketches with Google Drive, instead of having to setup local host. Follow the steps for setting up Google Drive host [here](https://github.com/OhJia/p5Mobile/wiki/Workflows). 
+

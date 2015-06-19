@@ -1,4 +1,4 @@
-document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
+// document.body.addEventListener('touchstart', function(e){ e.preventDefault(); });
 
 function setup() {
 	var myCan = createCanvas(windowWidth, windowHeight);
@@ -8,6 +8,7 @@ function setup() {
 	var c = color(255, 255, 0);
 	fill(c);
 	noStroke();
+	
 }
 
 function draw() {
@@ -20,6 +21,7 @@ function draw() {
 }
 
 function touchMoved() {
+
 	ellipse(touchX, touchY, 30, 30);
 	return false;
 }
