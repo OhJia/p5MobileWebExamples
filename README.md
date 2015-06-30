@@ -21,4 +21,6 @@ accelerometerMoveBall: http://bit.ly/1K6DbC8
 
 onDeviceMove: http://bit.ly/1FNEQGx
 
+onDeviceTurn: http://bit.ly/1JoSEvU
+
 
