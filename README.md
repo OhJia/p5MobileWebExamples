@@ -16,6 +16,7 @@ Alternatively, you can host the sketches with Google Drive, instead of having to
 Check out the examples in your mobile browser:
 
 simpleDraw: http://bit.ly/1GWP5fE
+
 accelerometerMoveBall: http://bit.ly/1K6DbC8
 
 
