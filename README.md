@@ -13,3 +13,9 @@ Install [Node.js] (https://nodejs.org/) if you haven't already </br>
 
 Alternatively, you can host the sketches with Google Drive, instead of having to setup local host. Follow the steps for setting up Google Drive host [here](https://github.com/OhJia/p5Mobile/wiki/Workflows). 
 
+Check out the examples in your mobile browser:
+
+simpleDraw: http://bit.ly/1GWP5fE
+accelerometerMoveBall: http://bit.ly/1K6DbC8
+
+
