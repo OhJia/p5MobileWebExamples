@@ -19,4 +19,6 @@ simpleDraw: http://bit.ly/1GWP5fE
 
 accelerometerMoveBall: http://bit.ly/1K6DbC8
 
+onDeviceMove: http://bit.ly/1FNEQGx
+
 
