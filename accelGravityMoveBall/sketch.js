@@ -10,8 +10,8 @@ var vy = 0;
 var ax = 0;
 var ay = 0;
  
-var delay = 10;
-var vMultiplier = 0.01;
+var vMultiplier = 0.07;
+var bMultiplier = 0.6;
 
 function setup() {
     var myCan = createCanvas(windowWidth, windowHeight);
@@ -28,34 +28,30 @@ function draw() {
 
 function ballMove() {
 
-	window.ondevicemotion = function(event) {
-		ax = event.accelerationIncludingGravity.x;
-		ay = event.accelerationIncludingGravity.y;
-	}
+	ax = accelerationX;
+	ay = accelerationY;
 
-	// ax = accelerationX;
-	// ay = accelerationY;
+	vx = vx + ay;
+	vy = vy + ax;
+	y = y + vy * vMultiplier; 
+	x = x + vx * vMultiplier;
 
-	vy = vy + -(ay);
-	vx = vx + ax;
-	y = y + vy * vMultiplier; // Rounding removed - Omiod
-	x = x + vx * vMultiplier; // Rounding removed - Omiod
-
+	// Bounce when touch the edge of the canvas
 	if (x < 0) { 
 		x = 0; 
-		vx = -vx * 0.7; 
+		vx = -vx * bMultiplier; 
 	}
  	if (y < 0) { 
  		y = 0; 
- 		vy = -vy * 0.7; 
+ 		vy = -vy * bMultiplier; 
  	}
  	if (x > windowWidth - 20) { 
  		x = windowWidth - 20; 
- 		vx = -vx * 0.7; 
+ 		vx = -vx * bMultiplier; 
  	}
  	if (y > windowHeight - 20) { 
  		y = windowHeight - 20; 
- 		vy = -vy * 0.7; 
+ 		vy = -vy * bMultiplier; 
  	}
 	
 }
