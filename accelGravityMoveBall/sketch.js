@@ -10,7 +10,7 @@ var vy = 0;
 var ax = 0;
 var ay = 0;
  
-var vMultiplier = 0.07;
+var vMultiplier = 0.007;
 var bMultiplier = 0.6;
 
 function setup() {
