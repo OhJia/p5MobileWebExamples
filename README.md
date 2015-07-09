@@ -1,6 +1,6 @@
 <h1>p5 Mobile Examples</h1>
 
-This is a collection of p5 sketches designed specifically for mobile browsers.
+This is a collection of p5 sketches designed for mobile browsers. For the p5 Mobile wiki, go [here](https://github.com/OhJia/p5Mobile). 
 
 The sketches run on local server using [connect] (https://github.com/senchalabs/connect). 
 

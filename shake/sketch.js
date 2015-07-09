@@ -20,7 +20,7 @@ function draw() {
     balls[i].turn();
     balls[i].display();
   }
-  checkForShake();
+  
 }
 
 // Jitter class
@@ -30,16 +30,15 @@ function Ball() {
   this.diameter = random(10, 30);
   this.xspeed = random(-1, 1);
   this.yspeed = random(-1, 1);
+  this.pxspeed;
+  this.pyspeed;
   this.direction = 1;
 
-
-//   this.move = function() {
-//     this.x += random(-this.speed, this.speed);
-//     this.y += random(-this.speed, this.speed);
-//   };
     this.move = function() {
         this.x += this.xspeed * this.direction;
-        this.y += this.yspeed * this.direction;       
+        this.y += this.yspeed * this.direction; 
+        this.pxspeed = this.xspeed;
+        this.pyspeed = this.yspeed;      
     };
     
     this.turn = function() {
@@ -52,9 +51,15 @@ function Ball() {
     }
     
     this.shake = function() {
-       this.xspeed += random(0, 5);
-       this.yspeed += random(0, 5);
-       return false;
+      this.pxspeed = this.xspeed;
+      this.pyspeed = this.yspeed;
+      this.xspeed += random(0, 5);
+      this.yspeed += random(0, 5);
+    }
+
+    this.stopShake = function() {
+      this.xspeed = this.pxspeed;
+      this.yspeed = this.pyspeed;
     }
 
   this.display = function() {
@@ -72,11 +77,20 @@ function Ball() {
 //   	}
 // }
 
+function deviceMoved() {
+  checkForShake();
+}
+
 function checkForShake() {
     accSpeed = abs(accelerationX - pAccelerationX)
     if (abs(accelerationX - pAccelerationX) > 20) {
         for (var i=0; i<balls.length; i++) {
      	    balls[i].shake();
        	}
+    } else {
+      for (var i=0; i<balls.length; i++) {
+          balls[i].stopShake();
+        }
+
     }
 }
