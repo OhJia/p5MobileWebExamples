@@ -4,24 +4,11 @@ function setup() {
 	var myCan = createCanvas(windowWidth, windowHeight);
 	myCan.parent('p5Container');
 
-	background(255, 200, 200);
-	var c = color(255, 255, 0);
-	fill(c);
-	noStroke();
-	
-}
-
-function draw() {
-	// var c = color(255, 255, 0);
-	// fill(c);
-	// noStroke();
-	// rect(mouseX, mouseY, 50, 50); for web, don't work on mobile
-	//ellipse(touchX, touchY, 30, 30); // for mobile web
-
+	strokeWeight(10)
+	stroke(0);
 }
 
 function touchMoved() {
-
-	ellipse(touchX, touchY, 30, 30);
+	line(touchX, touchY, ptouchX, ptouchY);
 	return false;
 }
