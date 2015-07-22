@@ -1,17 +1,24 @@
-var value = 0;
+var bgColor;
 
 function setup() {
-    var myCan = createCanvas(windowWidth, windowHeight);
-    myCan.parent('p5Container');
+  var myCan = createCanvas(windowWidth, windowHeight);
+  myCan.parent('p5Container');
+  bgColor = [
+     random(50, 255),
+     random(0, 200),
+     random(50, 255)
+  ]
 }
 
 function draw() {
-  background(value);
+  background(bgColor[0], bgColor[1], bgColor[2]);
 }
-function onDeviceMove() {
-	value = value + 5;
-	if (value > 255) {
-	value = 0;
-	}
+
+function deviceMoved() {
+    bgColor = [
+       map(accelerationX, -90, 90, 100, 175),
+       map(accelerationY, -90, 90, 100, 200),
+       map(accelerationZ, -90, 90, 100, 200)
+    ]    
 }
 
