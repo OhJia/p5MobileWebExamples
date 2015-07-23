@@ -1,4 +1,4 @@
-// work in process
+
 
 var balls = []; // array of Jitter objects
 var value = 0;
