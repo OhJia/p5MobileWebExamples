@@ -1,98 +1,113 @@
+var balls = []; 
 
-
-var balls = []; // array of Jitter objects
-var value = 0;
+var threshold = 30;
+var accChangeX = 0; 
+var accChangeY = 0;
+var accChangeT = 0;
 
 function setup() {
-   var myCan = createCanvas(windowWidth, windowHeight);
-   myCan.parent('p5Container');
-   //background(0);
-  //createCanvas(710, 400);
-  // Create objects
-  //setMoveThreshold(2000);
-  for (var i=0; i<50; i++) {
+  var myCan = createCanvas(windowWidth, windowHeight);
+  myCan.parent('p5Container');
+  
+  for (var i=0; i<20; i++) {
     balls.push(new Ball());
   }
 }
 
 function draw() {
-  background(value);
-  for (var i=0; i<balls.length; i++) {
-    balls[i].move();
-    balls[i].turn();
-    balls[i].display();
-  }
+  background(0);
   
+  for (var i=0; i<balls.length; i++) { 
+    balls[i].move(); 
+    balls[i].display();    
+  }
+
+  checkForShake();
+ 
 }
 
-// Jitter class
+// Ball class
 function Ball() {
   this.x = random(width);
   this.y = random(height);
   this.diameter = random(10, 30);
-  this.xspeed = random(-1, 1);
-  this.yspeed = random(-1, 1);
-  this.pxspeed;
-  this.pyspeed;
-  this.direction = 1;
+  this.xspeed = random(-2, 2);
+  this.yspeed = random(-2, 2);
+  this.oxspeed = this.xspeed;
+  this.oyspeed = this.yspeed;
+  this.direction = 0.7;
 
-    this.move = function() {
-        this.x += this.xspeed * this.direction;
-        this.y += this.yspeed * this.direction; 
-        this.pxspeed = this.xspeed;
-        this.pyspeed = this.yspeed;      
-    };
-    
-    this.turn = function() {
-        if (this.x >= windowWidth || this.x <= 0){
-            this.direction = this.direction * -1;
-        }
-        else if (this.y >= windowHeight || this.y <= 0){
-            this.direction = this.direction * -1;
-        }
+  this.move = function() {
+    this.x += this.xspeed * this.direction;
+    this.y += this.yspeed * this.direction;       
+  };
+  
+  // Bounce when touch the edge of the canvas  
+  this.turn = function() {
+    if (this.x < 0) { 
+      this.x = 0; 
+      this.direction = -this.direction; 
     }
-    
-    this.shake = function() {
-      this.pxspeed = this.xspeed;
-      this.pyspeed = this.yspeed;
-      this.xspeed += random(0, 5);
-      this.yspeed += random(0, 5);
+    else if (this.y < 0) { 
+      this.y = 0; 
+      this.direction = -this.direction;   
     }
+    else if (this.x > width - 20) { 
+      this.x = width - 20; 
+      this.direction = -this.direction; 
+    }
+    else if (this.y > height - 20) { 
+      this.y = height - 20; 
+      this.direction = -this.direction;   
+    } 
+  };
 
-    this.stopShake = function() {
-      this.xspeed = this.pxspeed;
-      this.yspeed = this.pyspeed;
+  // Add to xspeed and yspeed based on 
+  // the change in accelerationX value
+  this.shake = function() {
+    this.xspeed += random(5, accChangeX/3);
+    this.yspeed += random(5, accChangeX/3);
+  };
+
+  // Gradually slows down 
+  this.stopShake = function() {
+    if (this.xspeed > this.oxspeed) {
+      this.xspeed -= 0.6;
+    } 
+    else {
+      this.xspeed = this.oxspeed;
     }
+    if (this.yspeed > this.oyspeed) {
+      this.yspeed -= 0.6;
+    } 
+    else {
+      this.yspeed = this.oyspeed;
+    }
+  };
 
   this.display = function() {
     ellipse(this.x, this.y, this.diameter, this.diameter);
   };
 }
 
-// function onDeviceTurn() {
-// 	value = value + 5;
-// 	if (value > 255) {
-// 	value = 0;
-// 	}
-// 	for (var i=0; i<balls.length; i++) {
-// 		balls[i].shake();
-//   	}
-// }
-
-function deviceMoved() {
-  checkForShake();
-}
-
 function checkForShake() {
-    accSpeed = abs(accelerationX - pAccelerationX)
-    if (abs(accelerationX - pAccelerationX) > 20) {
-        for (var i=0; i<balls.length; i++) {
-     	    balls[i].shake();
-       	}
-    } else {
-      for (var i=0; i<balls.length; i++) {
-          balls[i].stopShake();
-        }
-
+  // Calculate total change in accelerationX and accelerationY
+  accChangeX = abs(accelerationX - pAccelerationX);
+  accChangeY = abs(accelerationY - pAccelerationY);
+  accChangeT = accChangeX + accChangeY;
+  // If shake
+  if (accChangeT >= threshold) {
+    for (var i=0; i<balls.length; i++) {
+      balls[i].shake();
+      balls[i].turn();
     }
+  } 
+  // if not shake
+  else {
+    for (var i=0; i<balls.length; i++) {
+      balls[i].stopShake();
+      balls[i].turn();
+      balls[i].move(); 
+    }
+  }
 }
