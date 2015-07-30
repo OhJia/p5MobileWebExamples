@@ -23,8 +23,7 @@ function draw() {
   }
 
   checkForShake();
- 
-}
+ }
 
 // Ball class
 function Ball() {
@@ -102,7 +101,7 @@ function checkForShake() {
       balls[i].turn();
     }
   } 
-  // if not shake
+  // If not shake
   else {
     for (var i=0; i<balls.length; i++) {
       balls[i].stopShake();
