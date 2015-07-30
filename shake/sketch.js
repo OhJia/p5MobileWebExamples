@@ -22,6 +22,21 @@ function draw() {
     balls[i].display();    
   }
 
+  fill(255, 0, 0);
+  textSize(24)
+  
+  if (accChangeT >= threshold){
+    faccChangeX = floor(accChangeX);
+    faccChangeY = floor(accChangeY);
+    faccChangeZ = floor(accChangeZ);
+  }
+  
+  if (faccChangeX > 0 && faccChangeY > 0 && faccChangeZ > 0) {
+    text(faccChangeX, 60, 140);
+    text(faccChangeY, 60, 160);
+    text(faccChangeZ, 60, 180);
+  }
+
   checkForShake();
  }
 
