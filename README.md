@@ -18,8 +18,9 @@ Check out the examples in your mobile browser:
 - simpleDraw: http://bit.ly/1GWP5fE
 - accelerometerMoveBall: http://bit.ly/1K6DbC8
 - accelGravityMoveBall: http://bit.ly/1LDcBSj
-- onDeviceMove: http://bit.ly/1FNEQGx
-- onDeviceTurn: http://bit.ly/1JoSEvU
+- deviceMoved: http://bit.ly/1FNEQGx
+- deviceTurned: http://bit.ly/1JoSEvU
 - shake: http://bit.ly/1LDcBSj
+- deviceShaken: http://bit.ly/1fXjiSx
 
 
