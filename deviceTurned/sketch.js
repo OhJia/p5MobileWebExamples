@@ -8,7 +8,7 @@ function setup() {
 function draw() {
   background(value);
 }
-function onDeviceTurn() {
+function deviceTurned() {
 	value = value + 5;
 	if (value > 255) {
 	value = 0;
