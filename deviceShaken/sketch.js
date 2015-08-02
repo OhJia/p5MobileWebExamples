@@ -6,6 +6,7 @@ function setup() {
   for (var i=0; i<15; i++) {
     balls.push(new Ball());
   }
+  setShakeThreshold(50);
 }
 
 function draw() {
@@ -39,25 +40,27 @@ function Ball() {
     this.turn = function() {
         if (this.x < 0) { 
             this.x = 0; 
-		    this.direction = -this.direction; 
-	    }
- 	    else if (this.y < 0) { 
- 	        this.y = 0; 
- 		    this.direction = -this.direction;   
- 	    }
- 	    else if (this.x > width - 20) { 
- 		    this.x = width - 20; 
- 		    this.direction = -this.direction; 
- 	    }
- 	    else if (this.y > height - 20) { 
- 		    this.y = height - 20; 
- 		    this.direction = -this.direction;   
- 	    } 
+        this.direction = -this.direction; 
+      }
+      else if (this.y < 0) { 
+          this.y = 0; 
+        this.direction = -this.direction;   
+      }
+      else if (this.x > width - 20) { 
+        this.x = width - 20; 
+        this.direction = -this.direction; 
+      }
+      else if (this.y > height - 20) { 
+        this.y = height - 20; 
+        this.direction = -this.direction;   
+      } 
     }
 
     this.shake = function() {
-      this.xspeed += random(5, accChangeX/3);
-      this.yspeed += random(5, accChangeX/3);
+    //   this.xspeed += random(5, accChangeX/3);
+    //   this.yspeed += random(5, accChangeX/3);
+        this.xspeed += random(5, 15);
+        this.yspeed += random(5, 15);
     }
 
     this.stopShake = function() {
@@ -90,5 +93,5 @@ function deviceShaken() {
              balls[i].stopShake();
              balls[i].move();
         }
-    }, 1000);
+    }, 500);
 }
