@@ -3,7 +3,11 @@ var balls = [];
 var threshold = 30;
 var accChangeX = 0; 
 var accChangeY = 0;
+var accChangeZ = 0;
 var accChangeT = 0;
+var faccChangeX = 0;
+var faccChangeY = 0;
+var faccChangeZ = 0;
 
 function setup() {
   var myCan = createCanvas(windowWidth, windowHeight);
