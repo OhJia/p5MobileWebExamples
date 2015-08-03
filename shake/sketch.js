@@ -112,6 +112,7 @@ function checkForShake() {
   // Calculate total change in accelerationX and accelerationY
   accChangeX = abs(accelerationX - pAccelerationX);
   accChangeY = abs(accelerationY - pAccelerationY);
+  accChangeZ = abs(accelerationZ - pAccelerationZ);
   accChangeT = accChangeX + accChangeY;
   // If shake
   if (accChangeT >= threshold) {
