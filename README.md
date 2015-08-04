@@ -22,5 +22,6 @@ Check out the examples in your mobile browser:
 - deviceTurned: http://bit.ly/1JoSEvU
 - shake: http://bit.ly/1LDcBSj
 - deviceShaken: http://bit.ly/1fXjiSx
+- 3dBoxAcceleration: http://bit.ly/1g8h17S
 
 
