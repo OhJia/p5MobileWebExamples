@@ -13,9 +13,12 @@ Install [Node.js] (https://nodejs.org/) if you haven't already </br>
 
 Alternatively, you can host the sketches with Google Drive, instead of having to setup local host. Follow the steps for setting up Google Drive host [here](https://github.com/OhJia/p5Mobile/wiki/Workflows). 
 
-Check out the examples in your mobile browser:
+View the following examples in your mobile browser.
 
+## p5 Touch Events
 - simpleDraw: http://bit.ly/1GWP5fE
+
+## p5 Acceleration Events
 - accelerometerMoveBall: http://bit.ly/1K6DbC8
 - accelGravityMoveBall: http://bit.ly/1LDcBSj
 - deviceMoved: http://bit.ly/1FNEQGx
@@ -24,8 +27,8 @@ Check out the examples in your mobile browser:
 - deviceShaken: http://bit.ly/1fXjiSx
 - 3dBoxAcceleration: http://bit.ly/1Iiv2Jb
 
-p5 + [hammer.js](http://hammerjs.github.io/)
-
+## p5 + Hammer.js Gesture Events
+[hammer.js](http://hammerjs.github.io/)
 - p5HammerPress: http://bit.ly/1P6w65j
 - p5HammerPinch: http://bit.ly/1IHrUUg
 - p5HammerSwipe: http://bit.ly/1IXxhVZ
