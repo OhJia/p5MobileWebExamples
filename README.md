@@ -27,6 +27,7 @@ Check out the examples in your mobile browser:
 p5 + [hammer.js](http://hammerjs.github.io/)
 
 - p5HammerPress: http://bit.ly/1P6w65j
+- p5HammerPinch: http://bit.ly/1IHrUUg
 
 
 
