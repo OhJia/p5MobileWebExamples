@@ -24,4 +24,9 @@ Check out the examples in your mobile browser:
 - deviceShaken: http://bit.ly/1fXjiSx
 - 3dBoxAcceleration: http://bit.ly/1Iiv2Jb
 
+p5 + [hammer.js](http://hammerjs.github.io/)
+
+- p5HammerPress: http://bit.ly/1P6w65j
+
+
 
