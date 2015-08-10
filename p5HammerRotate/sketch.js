@@ -12,7 +12,7 @@ function setup(){
   diameter = 100;
   ex = int(windowWidth/2);
   ey = int(windowHeight/2);
-  size = ey / 10;
+  size = ey / 15;
 
   setupRotate();
 }
@@ -20,11 +20,12 @@ function setup(){
 function draw(){
   background(255);
   stroke(0);
-  strokeWeight(5);
+  
   noFill();
   
   translate(ex, ey);
   for (var i = 0; i < ey; i++) {
+    strokeWeight(5-i/5);
     rotate(rotation);
     diameter = i * size + 50; 
     rect(-diameter/2, -diameter/2, diameter, diameter); 
