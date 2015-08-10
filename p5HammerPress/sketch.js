@@ -6,8 +6,7 @@ var count;
 
 function setup(){
   var myCan = createCanvas(windowWidth, windowHeight);
-  myCan.parent('p5Container');
-  var element = document.getElementById('p5Container');
+  var element = document.getElementById(myCan.elt);
   mc = new Hammer(element);
   
   count = 0;
