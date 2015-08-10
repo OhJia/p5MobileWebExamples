@@ -13,7 +13,7 @@ function setup(){
   ex = int(windowWidth/2);
   ey = int(windowHeight/2);
 
-  pinched();
+  setupPinch();
 }
 
 function draw(){
@@ -23,7 +23,7 @@ function draw(){
   ellipse(ex, ey, diameter, diameter);  
 }
 
-function pinched() {  
+function setupPinch() {  
   mc.on("pinchout pinchin", function(e){
     distance = int(dist(e.center.x, e.center.y, ex, ey));
     //console.log(e);

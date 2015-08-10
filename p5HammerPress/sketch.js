@@ -14,7 +14,7 @@ function setup(){
   ex = int(windowWidth/2);
   ey = int(windowHeight/2);
   
-  pressed();
+  setupPress();
 }
 
 function draw(){
@@ -35,7 +35,7 @@ function touchMoved() {
   return false;
 }
 
-function pressed() {  
+function setupPress() {  
   mc.on("press", function(e){
     distance = int(dist(e.center.x, e.center.y, ex, ey));
     //console.log(e.center.x, e.center.y, ex, ey);

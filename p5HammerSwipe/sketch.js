@@ -16,7 +16,7 @@ function setup(){
   ex = int(windowWidth/2);
   ey = int(windowHeight/2);
 
-  hammerSwiped();
+  setupSwipe();
 }
 
 function draw(){
@@ -42,7 +42,7 @@ function touchMoved() {
   return false;
 }
 
-function hammerSwiped() {  
+function setupSwipe() {  
   mc.on("swipeleft swiperight", function(e){
       if (e.type === "swipeleft") { 
         moveH = -3;
