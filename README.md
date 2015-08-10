@@ -32,6 +32,7 @@ View the following examples in your mobile browser.
 - p5HammerPress: http://bit.ly/1P6w65j
 - p5HammerPinch: http://bit.ly/1IHrUUg
 - p5HammerSwipe: http://bit.ly/1IXxhVZ
+- p5HammerDoubleTap: http://bit.ly/1IZSdd2
 
 
 
