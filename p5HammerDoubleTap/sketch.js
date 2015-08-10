@@ -54,21 +54,14 @@ function renderWave() {
 function setupDoubleTap() {  
   mc.on("doubletap", function(e){
     changeValue = 0.6;
-    changeAmp = 45;
-    setInterval(function(){ 
+    changeAmp = 35;       
+  }); 
+  setInterval(function(){ 
       if (changeValue > 0){
         changeValue = changeValue / 1.5;
       }
       if (changeAmp > 0){
         changeAmp = changeAmp / 5;
       }
-    }, 900);       
-  });  
+  }, 900);
 }
-
-
-
-
-
-
-
