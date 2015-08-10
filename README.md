@@ -34,6 +34,7 @@ View the following examples in your mobile browser.
 - p5HammerPinch: http://bit.ly/1IHrUUg
 - p5HammerSwipe: http://bit.ly/1IXxhVZ
 - p5HammerDoubleTap: http://bit.ly/1IZSdd2
+- p5HammerRotate: http://bit.ly/1PhnclO
 
 
 
