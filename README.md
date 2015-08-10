@@ -17,6 +17,7 @@ View the following examples in your mobile browser.
 
 ## p5 Touch Events
 - simpleDraw: http://bit.ly/1GWP5fE
+- multitouchZoom: http://bit.ly/1WdviAy
 
 ## p5 Acceleration Events
 - accelerometerMoveBall: http://bit.ly/1K6DbC8
