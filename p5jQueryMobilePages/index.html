@@ -1,0 +1,56 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+    <title>draw p5</title>
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+    <style>
+            /*make p5 sketch full screen*/
+        .ui-content {
+            padding: 0;
+            margin: 0;            
+        }
+    </style>
+</head> 
+<body> 
+    <!-- Start of first page -->
+    <div data-role="page" id="home">
+
+        <div data-role="header">
+            <h1>Home</h1>
+            <a href="#second">bar</a>
+        </div><!-- /header -->
+
+        <div data-role="content">   
+            <div id="p5Container"></div>
+            <!--<p>View internal page called <a href="#bar">bar</a></p>-->
+        </div><!-- /content -->
+
+    </div><!-- /page -->
+
+
+    <!-- Start of second page -->
+    <div data-role="page" id="second">
+
+        <div data-role="header">
+            <h1>Second</h1>
+        </div><!-- /header -->
+
+        <div data-role="content">   
+            <p><a href="#home">Back to home</a></p>   
+        </div><!-- /content -->
+
+        <!-- <div data-role="footer">
+            <h4>Page Footer</h4>
+        </div><!-- /header --> 
+    </div><!-- /page -->
+
+
+    <script type="text/javascript" src="p5.min.js"></script>
+    <script type="text/javascript" src="hammer.min.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+
+</body>
+</html>
